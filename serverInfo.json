@@ -1,0 +1,12 @@
+{
+    "server":
+    {
+        "ip": "localhost",
+        "port":3306,
+        "user": "root",
+        "password": "@All1002MySQL",
+        "database": "liahona_hymns"
+    }
+}
+
+
