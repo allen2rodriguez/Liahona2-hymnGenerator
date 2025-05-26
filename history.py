@@ -9,10 +9,8 @@ def get_history(number_shown: int):
     ORDER BY date DESC
     LIMIT %s
     """
-
     cursor.execute(query, (number_shown,))
     results = cursor.fetchall()
-    
     return results
 
 def make_changes(date: str, position: str, hymn_number: int):
@@ -21,8 +19,5 @@ def make_changes(date: str, position: str, hymn_number: int):
     SET {position} = %s
     WHERE date = %s
     """
-    
     cursor.execute(query, (hymn_number, date))
-    hymndb.commit()
-    
     print("Changes made succesfully")

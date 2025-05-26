@@ -1,5 +1,6 @@
 from connect2server import hymndb
 from datetime import datetime, timedelta
+from mysql.connector import IntegrityError # Handles errors when connecting to the database
 
 cursor = hymndb.cursor()
 
@@ -17,8 +18,8 @@ def insert_hymns(opening, sacraments, intermediate, closing):
     INSERT INTO history (date, opening, sacraments, intermediate, closing)
     VALUES (%s,%s, %s, %s, %s);
     """
-    cursor.execute(query, tuple)
-    hymndb.commit()
-
-    # Try catch whenever it attempts a duplicate entry for the same date
-    # "You've already done this weeks hymns, go to the history to see them"
+    try: 
+        cursor.execute(query, tuple)
+    except IntegrityError as e:
+        if e.errno == 1062:
+            raise SystemExit("\nYou've already done this week's hymns, go to the history to see them")

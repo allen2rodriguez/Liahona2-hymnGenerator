@@ -17,10 +17,8 @@ def get_opening_hymn():
     ORDER BY RAND()
     LIMIT 1;
     """
-
     cursor.execute(query)
     selection = cursor.fetchone()
-    
     # Return a list: selection[0] = hymn number, selection[1] = hymn title
     return selection
 
@@ -39,10 +37,8 @@ def get_sacrament_hymn():
     ORDER BY RAND()
     LIMIT 1;
     """
-
     cursor.execute(query)
     selection = cursor.fetchone()
-    
     # Return a list: selection[0] = hymn number, selection[1] = hymn title
     return selection
 
@@ -61,10 +57,8 @@ def get_intermediate_hymn():
     ORDER BY RAND()
     LIMIT 1;
     """
-    
     cursor.execute(query)
     selection = cursor.fetchone()
-    
     # Return a list: selection[0] = hymn number, selection[1] = hymn title
     return selection
 
@@ -82,10 +76,8 @@ def get_closing_hymn():
     AND recent.intermediate IS NULL
     ORDER BY RAND()
     LIMIT 1;
-    """
-    
+    """ 
     cursor.execute(query)
     selection = cursor.fetchone()
-    
     # Return a list: selection[0] = hymn number, selection[1] = hymn title
     return selection
