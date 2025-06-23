@@ -20,4 +20,4 @@ def make_changes(date: str, position: str, hymn_number: int):
     WHERE date = %s
     """
     cursor.execute(query, (hymn_number, date))
-    print("Changes made succesfully")
+    print("Changes made successfully.")
