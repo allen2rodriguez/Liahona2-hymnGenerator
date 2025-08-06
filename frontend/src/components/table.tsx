@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Table from "@cloudscape-design/components/table";
 import Header from "@cloudscape-design/components/header";
 import Pagination from "@cloudscape-design/components/pagination";
@@ -96,21 +96,21 @@ export default function HistoryTable() {
   });
 
   // Sorting
-  const sortedItems = [...filteredItems].sort((a, b) => {
-    const field = sortingColumn?.sortingField;
-    if (!field) return 0;
+ const sortedItems = [...filteredItems].sort((a, b) => {
+  const field = sortingColumn?.sortingField as keyof HymnItem;
+  if (!field) return 0;
 
-    // Dates should be sorted as strings (ISO format) so no conversion needed
-    const valA = a[field];
-    const valB = b[field];
+  const valA = a[field];
+  const valB = b[field];
 
-    if (valA === null || valA === undefined) return 1;
-    if (valB === null || valB === undefined) return -1;
+  if (valA === null || valA === undefined) return 1;
+  if (valB === null || valB === undefined) return -1;
 
-    if (valA < valB) return isDescending ? 1 : -1;
-    if (valA > valB) return isDescending ? -1 : 1;
-    return 0;
-  });
+  if (valA < valB) return isDescending ? 1 : -1;
+  if (valA > valB) return isDescending ? -1 : 1;
+  return 0;
+});
+
 
   const totalPages = Math.ceil(sortedItems.length / pageSize);
 
@@ -143,7 +143,7 @@ export default function HistoryTable() {
         sortingDescending={isDescending}
         onSortingChange={({ detail }) => {
           setSortingColumn(detail.sortingColumn);
-          setIsDescending(detail.isDescending);
+          setIsDescending(detail.isDescending ?? false);
         }}
         enableKeyboardNavigation
         trackBy="date"
