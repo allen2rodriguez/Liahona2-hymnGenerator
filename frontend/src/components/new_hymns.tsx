@@ -22,7 +22,7 @@ export default function Hymns() {
                 description=
                     {visible && (
                     <Alert type="info" dismissible onDismiss={() => setVisible(false)}>
-                        This feature is not yet implemented please do not press ths button please
+                        This feature is not yet implemented please do not press this button please
                     </Alert> 
                 )}
             >
