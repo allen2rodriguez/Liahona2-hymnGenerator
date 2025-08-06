@@ -3,7 +3,7 @@ import HistoryTable from './components/table.tsx'
 import Hymns from './components/new_hymns.tsx'
 import './App.css'
 
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from '@vercel/analytics/react';
 import "@cloudscape-design/global-styles/index.css";
 import { applyMode, Mode } from '@cloudscape-design/global-styles';
 
