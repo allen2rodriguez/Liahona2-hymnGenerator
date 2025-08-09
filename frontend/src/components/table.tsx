@@ -38,7 +38,7 @@ const columnDefinitions = [
   },
   {
     id: 'sacrament',
-    header: 'Sacrament Hymn',
+    header: 'Himno Sacramental',
     cell: (item: HymnItem) => (
       <a href={item.sacrament.link ?? undefined} target="_blank" rel="noopener noreferrer"
       style={{ color: '#42b4ff', textDecoration: 'underline' }}>
@@ -48,7 +48,7 @@ const columnDefinitions = [
   },
   {
     id: 'intermediate',
-    header: 'Intermediate Hymn',
+    header: 'Himno Intermedio',
     cell: (item: HymnItem) =>
       !item.intermediate.link ? (
         'None'
@@ -61,7 +61,7 @@ const columnDefinitions = [
   },
   {
     id: 'closing',
-    header: 'Closing Hymn',
+    header: 'Himno de Clausura',
     cell: (item: HymnItem) =>
       !item.closing.link ? (
         'None'
@@ -131,7 +131,7 @@ export default function HistoryTable() {
                 : `(${items.length})`
             }
           >
-            Hymn History
+            Himnos Pasados
           </Header>
         }
         columnDefinitions={columnDefinitions}

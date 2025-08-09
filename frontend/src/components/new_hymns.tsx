@@ -22,15 +22,15 @@ export default function Hymns() {
                 description=
                     {visible && (
                     <Alert type="info" dismissible onDismiss={() => setVisible(false)}>
-                        This feature is not yet implemented please do not press this button please
+                        Esta función aún no está implementada, por favor no presione este botón.                    
                     </Alert> 
                 )}
             >
-                Hymn Generator
+                Hymn Suggestions
             </Header>
             }
         >
-            <Button variant="primary" onClick={hymnClick}>Generate Hymns</Button>
+            <Button variant="primary" onClick={hymnClick}>Submit Suggestion</Button>
         </Container>
     );
 }

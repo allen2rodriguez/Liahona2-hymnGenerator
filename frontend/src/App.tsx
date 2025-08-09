@@ -15,7 +15,6 @@ function App() {
   return (
     <>
       <h1 className="title">Liahona II Hymn Dashboard</h1>
-      <p>Arden if you're reading this I hope you're having a good day</p>
       <SpaceBetween size="l" direction="vertical">
         <Hymns />
         <div style={{ overflowX: 'auto' }}>
